@@ -33,8 +33,6 @@ npm install
 ``bash
 npm test
 
-## 🧩 What UI5 components were used
+## 🧩 Why UI5 components were not used
 
-SAP UI5 Web Components for React: @ui5/webcomponents-react
-
-components like Table, Button, SegmentedButton, Input
+Only Tailwind was used because the @ui5/webcomponents-react library is not compatible with Next15.
