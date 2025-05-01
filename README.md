@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Leave Request Dashboard
 
-## Getting Started
+A simple dashboard built with React and custom hooks to manage employee leave requests. It supports viewing, filtering, and updating the approval status of requests.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✅ What was implemented
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Custom React hook `useLeaveRequests` to fetch and manage leave data.
+- Functionality to approve or reject leave requests via `updateStatus`.
+- Filtering and sorting utilities for leave data (`filterLeaveRequests`, `sortByDateFrom`).
+- Unit tests using Jest and Testing Library to verify the core logic.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 How to run the project
 
-## Learn More
+1. Install dependencies:
 
-To learn more about Next.js, take a look at the following resources:
+``bash
+npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Start the development server:
+   ``bash
+   npm run dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Open your browser at http://localhost:3000
+   ``bash
+   npm run test
 
-## Deploy on Vercel
+## 🧪 How to run the tests
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+``bash
+npm test
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🧩 What UI5 components were used
+
+SAP UI5 Web Components for React: @ui5/webcomponents-react
+
+components like Table, Button, SegmentedButton, Input
