@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useLeaveRequests } from "./hooks/useLeaveRequests";
 import FilterBar from "./components/FilterBar";
 import DashboardTable from "./components/DashboardTable";
+import { filterLeaveRequests, sortByDateFrom } from "./utils/filterAndSort";
 
 const DashboardPage = () => {
   const { list, loading, updateStatus } = useLeaveRequests();
@@ -11,17 +12,12 @@ const DashboardPage = () => {
   const [statusFilter, setStatusFilter] = useState("");
   const [sortAsc, setSortAsc] = useState(true);
 
-  const filtered = list.filter(
-    (item) =>
-      (!statusFilter || item.status === statusFilter) &&
-      item.name.toLowerCase().includes(search.toLowerCase())
-  );
-
-  const sorted = [...filtered].sort((a, b) => {
-    const dateA = new Date(a.date_from);
-    const dateB = new Date(b.date_from);
-    return sortAsc ? dateA - dateB : dateB - dateA;
+  const filtered = filterLeaveRequests(list, {
+    search,
+    status: statusFilter,
   });
+
+  const sorted = sortByDateFrom(filtered, sortAsc);
 
   return (
     <main className="p-6">
