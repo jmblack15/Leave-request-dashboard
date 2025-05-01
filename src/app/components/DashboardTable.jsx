@@ -3,10 +3,8 @@
 import { formatDate } from "../utils/date";
 import { getStatusBadgeClass } from "../utils/statusStyle";
 
-import { Button } from "@ui5/webcomponents-react";
-
 const DashboardTable = ({ requests, loading, onStatusChange }) => (
-  <div className="overflow-x-auto bg-whiteColor rounded-lg shadow-md h-[84vh]">
+  <div className="overflow-x-auto bg-whiteColor rounded-lg shadow-md h-[87vh]">
     <table className="min-w-full bg-whiteColor rounded-lg shadow-md bg-white ">
       <thead>
         <tr>
@@ -52,19 +50,18 @@ const DashboardTable = ({ requests, loading, onStatusChange }) => (
                 </div>
               </td>
               <td className="pl-4 ml-4">
-                <Button
-                  design="Positive"
+                <button
                   onClick={() => onStatusChange(req.id, "APPROVED")}
+                  className="rounded-md bg-green-600 py-2 px-4 cursor-pointer border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-green-700 focus:shadow-none active:bg-green-700 hover:bg-green-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2"
                 >
                   Approve
-                </Button>
-                <Button
-                  design="Negative"
-                  className="ml-3"
+                </button>
+                <button
+                  className="rounded-md bg-red-600 py-2 px-4 cursor-pointer border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-green-700 focus:shadow-none active:bg-red-700 hover:bg-red-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2"
                   onClick={() => onStatusChange(req.id, "REJECTED")}
                 >
                   Reject
-                </Button>
+                </button>
               </td>
             </tr>
           ))

@@ -21,16 +21,20 @@ const DashboardPage = () => {
 
   return (
     <main className="p-6">
-      <h1 className="text-2xl font-bold mb-4 text-blue-600">
-        Leave Request Dashboard
-      </h1>
-      <FilterBar
-        sortAsc={sortAsc}
-        setSortAsc={setSortAsc}
-        search={search}
-        setSearch={setSearch}
-        setStatusFilter={setStatusFilter}
-      />
+      <div className="flex flex-wrap justify-between">
+        <h1 className="text-4xl font-bold mb-4 text-blue">
+          Leave Request Dashboard
+        </h1>
+        <FilterBar
+          sortAsc={sortAsc}
+          setSortAsc={setSortAsc}
+          search={search}
+          setSearch={setSearch}
+          setStatusFilter={setStatusFilter}
+          statusFilter={statusFilter}
+        />
+      </div>
+
       <DashboardTable
         requests={sorted}
         loading={loading}
